@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@900&family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --bg: #000000;
+  --card-bg: #1a1a1a;
+  --metallic-silver: #a1a1aa;
+  --electric-yellow: #ffeb3b;
+  --text-white: #ffffff;
+  background-color: var(--bg);
+  color: var(--text-white);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* Premium Metallic Containers */
+.premium-room {
+  background: var(--card-bg);
+  border: 1px solid var(--metallic-silver);
+  border-radius: 16px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.premium-room:hover {
+  border-color: var(--text-white);
+  background: #222222;
+}
+
+.premium-room.target-active {
+  box-shadow: 0 0 20px rgba(255, 235, 59, 0.1);
+}
+
+/* Metallic Word Cards */
+.silver-card {
+  background: var(--card-bg);
+  color: var(--text-white);
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: 1px solid var(--metallic-silver);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+  user-select: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.silver-card:hover {
+  border-color: var(--text-white);
+  transform: translateY(-2px);
+}
+
+.silver-card.active {
+  border-color: var(--electric-yellow);
+  box-shadow: 0 0 15px var(--electric-yellow);
+  color: var(--electric-yellow);
+  transform: scale(1.05);
+}
+
+/* Specialized Highlights */
+.highlight-yellow {
+  color: var(--electric-yellow);
+}
+
+.score-metallic {
+  background: #111111;
+  border: 2px solid var(--electric-yellow);
+  padding: 8px 24px;
+  border-radius: 8px;
+}
+
+.btn-reset-premium {
+  background: var(--metallic-silver);
+  color: #000000;
+  font-weight: 800;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.btn-reset-premium:hover {
+  background: var(--text-white);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Placed Labels */
+.placed-label-premium {
+  background: var(--text-white);
+  color: #000000;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+@keyframes flash-red-premium {
+  0%, 100% { border-color: var(--metallic-silver); }
+  50% { border-color: #ff5252; box-shadow: 0 0 10px #ff5252; }
+}
+
+.flash-error-premium {
+  animation: flash-red-premium 0.5s ease-in-out;
+}
